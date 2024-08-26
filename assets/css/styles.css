@@ -6,7 +6,9 @@
 
 body {
   background-image: linear-gradient(to top, #419b7d 0%, #184034 100%);
-  min-height: 100vh;
+  background-color: #419b7d;
+  background-repeat: no-repeat;
+  min-height: 80vh;
   color: white !important;
   overflow: hidden;
 
@@ -46,7 +48,7 @@ button {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 35vh;
+  height: 30vh;
 
   .carta:not(:first-child) {
     margin-left: -64px;
@@ -135,7 +137,7 @@ button {
 
 .centrarVerticalmente {
   position: absolute;
-  top: 40%;
+  top: 35%;
 }
 
 .centrarHorizontalmente {
