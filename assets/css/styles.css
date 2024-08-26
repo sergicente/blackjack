@@ -5,10 +5,10 @@
 }
 
 body {
-  background-image: linear-gradient(to top, #419b7d 0%, #184034 100%);
-  background-color: #419b7d;
+  background-image: linear-gradient(to top,#184034 0%, #419b7d 50%, #184034 100%);
+  background-color: #184034;
   background-repeat: no-repeat;
-  min-height: 80vh;
+  max-height: 75vh;
   color: white !important;
   overflow: hidden;
 
@@ -159,7 +159,7 @@ button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 50%;
+  height: 5vh;
   margin: 0 10vw;
 }
 
@@ -167,7 +167,7 @@ button {
   display: flex;
   flex-direction: row;
   align-items: end;
-  height: 50%;
+  height: 10vh;
 }
 
 .mensajes {
@@ -193,7 +193,7 @@ button {
 }
 
 .tapete {
-  height: 20vh;
+  height: 15vh;
   width: calc(90vw - 6px);
   margin: 0 auto;
   background-color: #19354e;
