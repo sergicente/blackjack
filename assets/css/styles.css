@@ -8,7 +8,7 @@ body {
   background-image: linear-gradient(0deg, #184034 0%, #388a6f 100%);
   background-color: #388a6f;
   background-repeat: no-repeat;
-  min-height: 87vh;
+  min-height: 100vh;
   color: white !important;
   overflow: hidden;
 
@@ -56,7 +56,7 @@ button {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 30vh;
+  height: 35vh;
 
   .carta:not(:first-child) {
     margin-left: -64px;
@@ -145,7 +145,7 @@ button {
 
 .centrarVerticalmente {
   position: absolute;
-  top: 35%;
+  top: 40%;
 }
 
 .centrarHorizontalmente {
@@ -169,14 +169,16 @@ button {
   align-items: center;
   justify-content: flex-end;
   height: 5vh;
-  margin: 0 6vw;
+  right: 5vw;
+  bottom: 105px;
+  position:absolute;
 }
 
 .fichas {
   display: flex;
   flex-direction: row;
   align-items: end;
-  height: 10vh;
+  height: 80px;
 }
 
 .mensajes {
@@ -202,8 +204,7 @@ button {
 }
 
 .tapete {
-  height: 10vh;
-  width: calc(90vw - 6px);
+  width: 90vw;
   margin: 0 auto;
   background-color: #19354e;
   border-radius: 12px;
@@ -211,4 +212,6 @@ button {
   box-shadow: 0px 0px 0px 2px #19354e;
   filter: drop-shadow(0px 0px 5px #2f2d2d90);
   box-sizing: border-box;
+  transform: translate(-50%);
+  bottom: 5vw;
 }
