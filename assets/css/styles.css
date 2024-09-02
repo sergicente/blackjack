@@ -4,6 +4,14 @@
   font-family: monospace;
 }
 
+html {
+  touch-action: manipulation; /* Desactiva el comportamiento predeterminado del navegador para pellizcar para hacer zoom */
+  overflow: hidden; /* Evita que el contenido se desplace al hacer zoom */
+  position: fixed; /* Mantiene la página en su lugar sin desplazamiento */
+  width: 100%; /* Asegura que el ancho de la página se mantenga */
+  height: 100%; /* Asegura que la altura de la página se mantenga */
+}
+
 body {
   background-image: linear-gradient(0deg, #184034 0%, #388a6f 100%);
   background-color: #388a6f;
