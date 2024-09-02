@@ -1,50 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <link rel="icon" href="https://sergicente.com/img/favicon.png" type="image/png" />
+        <link rel="stylesheet" href="assets/css/styles.css" />
+        <title>Blackjack</title>
+    </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <link rel="icon" href="https://sergicente.com/img/favicon.png" type="image/png">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <title>Blackjack</title>
-</head>
+    <body>
+        <div id="computadora-cartas"></div>
 
-<body>
+        <div id="centro">
+            <div id="fichasApostadas" class="centrarVerticalmente centrarHorizontalmente"></div>
+            <div id="apuestaJugador" class="noMostrar centrarVerticalmente centrarHorizontalmente"></div>
+            <button id="btnDetener" class="centrarVerticalmente centrarDerecha noMostrar">Detener</button>
+            <button id="btnNuevo" class="centrarVerticalmente centrarDerecha noMostrar">Nuevo Juego</button>
+            <button id="btnRepartir" class="centrarVerticalmente centrarDerecha noMostrar">Repartir</button>
+            <button id="btnPedir" class="centrarVerticalmente centrarIzquierda noMostrar">Carta</button>
+        </div>
 
-  <div id="computadora-cartas"></div>
+        <div id="jugador-cartas"></div>
+        <div class="controles">
+            <div id="saldoJugador"></div>
+        </div>
+        <div class="tapete centrarHorizontalmente">
+            <div class="fichas">
+                <div id="fichas10"></div>
+                <div id="fichas50"></div>
+                <div id="fichas100"></div>
+                <div id="fichas500"></div>
+            </div>
+        </div>
 
-  <div id="centro">
-    <div id="fichasApostadas" class="centrarVerticalmente centrarHorizontalmente"></div>
-    <div id="apuestaJugador" class="noMostrar centrarVerticalmente centrarHorizontalmente"></div>
-    <button id="btnDetener" class="centrarVerticalmente centrarDerecha noMostrar">Detener</button>
-    <button id="btnNuevo" class="centrarVerticalmente centrarDerecha noMostrar">Nuevo Juego</button>
-    <button id="btnRepartir" class="centrarVerticalmente centrarDerecha noMostrar">Repartir</button>
-    <button id="btnPedir" class="centrarVerticalmente centrarIzquierda noMostrar">Carta</button>
-  </div>
+        <div class="mensajes">Has ganado!</div>
 
-  <div id="jugador-cartas"></div>
-  <div class="controles">
-    <div id="saldoJugador"></div>
-  </div>
-  <div class="tapete centrarHorizontalmente">
-    
-    <div class="fichas">
-      <div id="fichas10"></div>
-      <div id="fichas50"></div>
-      <div id="fichas100"></div>
-      <div id="fichas500"></div>
-    </div>
-  </div>
-
-
-
-
-  <div class="mensajes">Has ganado!</div>
-
-
-
-  <script src="assets/js/juego.js"></script>
-
-</body>
-
+        <script src="assets/js/juego.js"></script>
+    </body>
 </html>
