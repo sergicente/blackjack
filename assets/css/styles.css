@@ -6,9 +6,9 @@
 
 body {
   background-image: linear-gradient(0deg, #184034 0%, #388a6f 100%);
-  background-color: #184034;
+  background-color: #388a6f;
   background-repeat: no-repeat;
-  max-height: 100vh;
+  min-height: 87vh;
   color: white !important;
   overflow: hidden;
 
@@ -39,8 +39,8 @@ button {
 }
 
 #saldoJugador {
-  background-color: black;
-  color:green;
+  background-color: rgb(4, 16, 1);
+  color:#72f53e;
   padding: 2px 5px;
   min-width: 12.5vw;
   border-radius: 5px;
