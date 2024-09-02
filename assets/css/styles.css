@@ -1,3 +1,4 @@
+
 * {
   margin: 0px;
   padding: 0px;
@@ -5,11 +6,11 @@
 }
 
 html {
-  touch-action: manipulation; /* Desactiva el comportamiento predeterminado del navegador para pellizcar para hacer zoom */
-  overflow: hidden; /* Evita que el contenido se desplace al hacer zoom */
-  position: fixed; /* Mantiene la página en su lugar sin desplazamiento */
-  width: 100%; /* Asegura que el ancho de la página se mantenga */
-  height: 100%; /* Asegura que la altura de la página se mantenga */
+  touch-action: manipulation;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -19,7 +20,9 @@ body {
   min-height: 100vh;
   color: white !important;
   overflow: hidden;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 button {
@@ -38,24 +41,42 @@ button {
   font-size: 12px;
 }
 
+#mesa {}
+
 #apuestaJugador {
-  transform: translate(-50%, 5vh);
+  transform: translate(0%, 30px);
+  text-align: center;
 }
 
 #centro {
-  height: 10vh;
+  height: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  width: 300px;
+
 }
 
-#saldoJugador {
-  background-color: rgb(4, 16, 1);
-  color:#72f53e;
-  padding: 2px 5px;
-  min-width: 12.5vw;
-  border-radius: 5px;
-  border: 1px solid #19354e;
-  filter: drop-shadow(0px 3px 5px #2f2d2d90);
-  text-align: right;
+#centroCentro {}
 
+#saldoJugador {
+  background-color: rgb(25, 53, 78);
+  color: #fff;
+  padding: 2px 5px 0 5px;
+  min-width: 50px;
+  border-radius: 5px 5px 0 0;
+  text-align: right;
+  margin-right: 20px;
+  border: 1px dashed #ffffff58;
+  border-bottom-width: 1px;
+  border-bottom-style: dashed;
+  border-bottom-color: rgba(255, 255, 255, 0.345);
+  box-shadow: 0px 0px 0px 2px #19354e;
+  z-index: 999;
+  border-bottom: none;
+  text-align: center;
+  bottom: 9px;
+  position: relative;
 }
 
 #computadora-cartas,
@@ -64,7 +85,7 @@ button {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 35vh;
+  height: 250px;
 
   .carta:not(:first-child) {
     margin-left: -64px;
@@ -77,10 +98,10 @@ button {
   align-items: center;
   justify-content: end;
   height: 0vh;
-  transform: translate(-50%);
+
   img {
-    width: 64px;
-    margin-top: -60px;
+    margin-top: -47.5px;
+    width: 50px;
     transform: translateY(50%);
     filter: drop-shadow(0px 3px 5px #2f2d2d90);
   }
@@ -91,46 +112,56 @@ button {
 #fichas50,
 #fichas10 {
   display: flex;
-  width: 64px;
+  width: 50px;
   flex-direction: column-reverse;
   align-items: center;
   justify-content: end;
   height: 0vh;
   margin: 0 auto;
   transform: translateY(-8px);
+
   img {
-    margin-top: -60px;
-    width: 64px;
+    margin-top: -47.5px;
+    width: 50px;
   }
 }
 
 #jugador-cartas .carta:nth-child(1) {
   transform: rotate(-2deg);
 }
+
 #jugador-cartas .carta:nth-child(2) {
   transform: rotate(-1deg);
 }
+
 #jugador-cartas .carta:nth-child(3) {
   transform: rotate(0deg);
 }
+
 #jugador-cartas .carta:nth-child(4) {
   transform: rotate(1deg);
 }
+
 #jugador-cartas .carta:nth-child(5) {
   transform: rotate(2deg);
 }
+
 #computadora-cartas .carta:nth-child(1) {
   transform: rotate(2deg);
 }
+
 #computadora-cartas .carta:nth-child(2) {
   transform: rotate(1deg);
 }
+
 #computadora-cartas .carta:nth-child(3) {
   transform: rotate(0deg);
 }
+
 #computadora-cartas .carta:nth-child(4) {
   transform: rotate(-1deg);
 }
+
 #computadora-cartas .carta:nth-child(5) {
   transform: rotate(-2deg);
 }
@@ -141,7 +172,7 @@ button {
   filter: drop-shadow(0px 3px 5px #2f2d2d90);
 }
 
-.centrarDerecha {
+/* .centrarDerecha {
   right: 20%;
   transform: translate(50%, -50%);
 }
@@ -153,7 +184,7 @@ button {
 
 .centrarVerticalmente {
   position: absolute;
-  top: 40%;
+  top: 47%;
 }
 
 .centrarHorizontalmente {
@@ -163,47 +194,41 @@ button {
 
 .centrarVerticalmenteComputadora {
   position: absolute;
-  top: 17.5%!important;
+  top: 35% !important;
 }
 
 .centrarVerticalmenteJugador {
   position: absolute;
-  top: 62.5%!important;
-}
+  top: 59.25% !important
+} */
 
 .controles {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  height: 5vh;
-  right: 5vw;
-  bottom: 105px;
-  position:absolute;
+  height: 0px;
 }
 
 .fichas {
   display: flex;
   flex-direction: row;
   align-items: end;
-  height: 80px;
+  height: 65px;
 }
 
 .mensajes {
-  position: absolute;
-  top: -10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  align-items: center;
-  background-color: #FCFCFD !important;
+  font-weight: 100;
+  width: 300px;
+  background-color: #C8CFA0 !important;
   border-radius: 4px;
   box-sizing: border-box;
-  color: #36395A;
+  color: #51655b;
   display: inline-flex;
-  height: 45px;
-  width: 250px;
+  align-items: center;
+  height: 40px;
   justify-content: center;
-  font-size: 16px;
+  font-size: 14px;
   box-shadow: 0px 1px 2px #2f2d2d90;
 }
 
@@ -212,7 +237,7 @@ button {
 }
 
 .tapete {
-  width: 90vw;
+  width: 300px;
   margin: 0 auto;
   background-color: #19354e;
   border-radius: 12px;
@@ -220,6 +245,4 @@ button {
   box-shadow: 0px 0px 0px 2px #19354e;
   filter: drop-shadow(0px 0px 5px #2f2d2d90);
   box-sizing: border-box;
-  transform: translate(-50%);
-  bottom: 20px;
 }

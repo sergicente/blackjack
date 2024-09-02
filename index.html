@@ -9,31 +9,41 @@
     </head>
 
     <body>
-        <div id="computadora-cartas"></div>
+        <div id="mesa">
+            <div class="mensajes">has ganado!</div>
+            <div id="computadora-cartas"></div>
 
-        <div id="centro">
-            <div id="fichasApostadas" class="centrarVerticalmente centrarHorizontalmente"></div>
-            <div id="apuestaJugador" class="noMostrar centrarVerticalmente centrarHorizontalmente"></div>
-            <button id="btnDetener" class="centrarVerticalmente centrarDerecha noMostrar">Detener</button>
-            <button id="btnNuevo" class="centrarVerticalmente centrarDerecha noMostrar">Nuevo Juego</button>
-            <button id="btnRepartir" class="centrarVerticalmente centrarDerecha noMostrar">Repartir</button>
-            <button id="btnPedir" class="centrarVerticalmente centrarIzquierda noMostrar">Carta</button>
-        </div>
+            <div id="centro">
+                <div id="centroIzquierda">
+                    <button id="btnPedir" class="noMostrar">Carta</button>
+                </div>
+                <div id="centroCentro">
+                    <div id="fichasApostadas" class=""></div>
+                    <div id="apuestaJugador" class="noMostrar"></div>
+                </div>
+                <div id="centroDerecha">
+                    <button id="btnDetener" class="noMostrar">Detener</button>
+                    <button id="btnNuevo" class="noMostrar">Nuevo Juego</button>
+                    <button id="btnRepartir" class="noMostrar">Repartir</button>
+                </div>
 
-        <div id="jugador-cartas"></div>
-        <div class="controles">
-            <div id="saldoJugador"></div>
-        </div>
-        <div class="tapete centrarHorizontalmente">
-            <div class="fichas">
-                <div id="fichas10"></div>
-                <div id="fichas50"></div>
-                <div id="fichas100"></div>
-                <div id="fichas500"></div>
+
+            </div>
+
+            <div id="jugador-cartas"></div>
+            <div class="controles">
+                <div id="saldoJugador"></div>
+            </div>
+            <div class="tapete">
+                <div class="fichas">
+                    <div id="fichas10"></div>
+                    <div id="fichas50"></div>
+                    <div id="fichas100"></div>
+                    <div id="fichas500"></div>
+                </div>
             </div>
         </div>
 
-        <div class="mensajes">Has ganado!</div>
 
         <script src="assets/js/juego.js"></script>
     </body>

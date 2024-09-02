@@ -141,7 +141,7 @@
     };
 
     const turnoComputadora = () => {
-        console.log("turno pc");
+        mensaje.innerText = "Se queda";
         setTimeout(() => {
             divCartasComputadora.removeChild(divCartasComputadora.children[1]);
             mostrarCarta(divCartasComputadora, cartaVolteada);
@@ -163,6 +163,7 @@
     };
 
     const turnoJugador = () => {
+        mensaje.innerText = "Carta";
         const carta = pedirCarta();
         sumarPuntos(carta, jugador);
         mostrarCarta(divCartasJugador, carta);
@@ -182,8 +183,7 @@
             jugador.apuestaFichas50 *= 2;
             jugador.apuestaFichas100 *= 2;
             jugador.apuestaFichas500 *= 2;
-            mensaje.innerText = `¡Has ganado!`;
-            mensaje.classList.add("centrarVerticalmenteJugador");
+            mensaje.innerText = `Ganas`;
             btnNuevo.classList.remove("noMostrar");
         }, 0);
     };
@@ -194,8 +194,7 @@
             jugador.apuestaFichas50 = 0;
             jugador.apuestaFichas100 = 0;
             jugador.apuestaFichas500 = 0;
-            mensaje.innerText = `Gana la banca`;
-            mensaje.classList.add("centrarVerticalmenteComputadora");
+            mensaje.innerText = `Pierdes`;
             btnNuevo.classList.remove("noMostrar");
         }, 0);
     };
@@ -217,8 +216,8 @@
     };
 
     const repartirCartas = () => {
+        mensaje.innerText = "Apuestas cerradas";
         btnRepartir.classList.add("noMostrar");
-        mensaje.classList.remove("centrarVerticalmenteComputadora");
 
         setTimeout(() => {
             let carta = pedirCarta();
@@ -254,6 +253,7 @@
             } else {
                 btnPedir.classList.remove("noMostrar");
                 btnDetener.classList.remove("noMostrar");
+                mensaje.innerText = "Su turno";
             }
         }, 2000);
     };
@@ -268,8 +268,6 @@
         jugador.apuestaFichas100 = 0;
         jugador.apuestaFichas500 = 0;
         calcularImportes();
-        mensaje.classList.remove("centrarVerticalmenteJugador");
-        mensaje.classList.remove("centrarVerticalmenteComputadora");
         mostrarFichasMonedero();
         divCartasJugador.innerHTML = null;
         divCartasComputadora.innerHTML = null;
@@ -284,7 +282,6 @@
         apuestaJugador.classList.add("noMostrar");
         btnNuevo.classList.add("noMostrar");
         mensaje.innerText = `Hagan sus apuestas`;
-        mensaje.classList.add("centrarVerticalmenteComputadora");
     };
 
     const calcularImportes = () => {
