@@ -97,7 +97,7 @@ button {
   justify-content: end;
   height: 0vh;
   margin: 0 auto;
-  transform: translateY(-1.5vh);
+  transform: translateY(-8px);
   img {
     margin-top: -60px;
     width: 64px;
