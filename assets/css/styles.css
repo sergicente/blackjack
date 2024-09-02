@@ -5,10 +5,10 @@
 }
 
 body {
-  background-image: linear-gradient(to top,#184034 0%, #419b7d 50%, #184034 100%);
+  background-image: linear-gradient(0deg, #184034 0%, #388a6f 100%);
   background-color: #184034;
   background-repeat: no-repeat;
-  max-height: 75vh;
+  max-height: 100vh;
   color: white !important;
   overflow: hidden;
 
@@ -39,6 +39,14 @@ button {
 }
 
 #saldoJugador {
+  background-color: black;
+  color:green;
+  padding: 2px 5px;
+  min-width: 12.5vw;
+  border-radius: 5px;
+  border: 1px solid #19354e;
+  filter: drop-shadow(0px 3px 5px #2f2d2d90);
+  text-align: right;
 
 }
 
@@ -159,8 +167,9 @@ button {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-end;
   height: 5vh;
-  margin: 0 10vw;
+  margin: 0 6vw;
 }
 
 .fichas {
@@ -193,15 +202,12 @@ button {
 }
 
 .tapete {
-  height: 15vh;
+  height: 10vh;
   width: calc(90vw - 6px);
   margin: 0 auto;
   background-color: #19354e;
-  border-radius: 12px 12px 0 0;
-  border-top: 1px dashed #ffffff58;
-  border-left: 1px dashed #ffffff58;
-  border-right: 1px dashed #ffffff58;
-  border-bottom: none;
+  border-radius: 12px;
+  border: 1px dashed #ffffff58;
   box-shadow: 0px 0px 0px 2px #19354e;
   filter: drop-shadow(0px 0px 5px #2f2d2d90);
   box-sizing: border-box;
