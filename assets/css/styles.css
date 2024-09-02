@@ -221,5 +221,5 @@ button {
   filter: drop-shadow(0px 0px 5px #2f2d2d90);
   box-sizing: border-box;
   transform: translate(-50%);
-  bottom: 5vw;
+  bottom: 20px;
 }
