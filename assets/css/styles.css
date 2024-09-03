@@ -35,10 +35,11 @@ button {
   color: #36395A;
   cursor: pointer;
   display: inline-flex;
-  height: 50px;
+  height: 40px;
   width: 100px;
   justify-content: center;
   font-size: 12px;
+  margin: 5px 0;
 }
 
 #mesa {}
@@ -49,7 +50,7 @@ button {
 }
 
 #centro {
-  height: 50px;
+  height: 100px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
@@ -90,6 +91,11 @@ button {
   .carta:not(:first-child) {
     margin-left: -64px;
   }
+}
+
+#computadora-cartas{
+  height: 200px;
+
 }
 
 #fichasApostadas {

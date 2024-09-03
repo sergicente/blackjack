@@ -5,6 +5,7 @@
     const btnRepartir = document.querySelector("#btnRepartir");
     const btnNuevo = document.querySelector("#btnNuevo");
     const btnDetener = document.querySelector("#btnDetener");
+    const btnDoblar = document.querySelector("#btnDoblar");
     const divCartasJugador = document.querySelector("#jugador-cartas");
     const divCartasComputadora = document.querySelector("#computadora-cartas");
     const divFichasApostadas = document.querySelector("#fichasApostadas");
@@ -20,6 +21,7 @@
     const moneda100 = document.querySelector("#fichas100");
     const moneda500 = document.querySelector("#fichas500");
     let cartaVolteada;
+    let apostando = false;
 
     const jugador = {
         puntos: 0,
@@ -128,7 +130,7 @@
             100: divFichas100,
             500: divFichas500,
         };
-        if (jugador[fichas[monto]] > 0 && jugador.contadorCartas === 0) {
+        if (jugador[fichas[monto]] > 0 && apostando) {
             jugador[fichas[monto]] -= 1; // Restamos una ficha del tipo seleccionado
             jugador[`apuestaFichas${monto}`] += 1;
             dibujarFicha(divFichasApostadas, monto);
@@ -136,7 +138,6 @@
             calcularImportes();
             btnRepartir.classList.remove("noMostrar");
             apuestaJugador.classList.remove("noMostrar");
-        } else {
         }
     };
 
@@ -211,11 +212,13 @@
         } else if (jugador.puntos < computadora.puntos) {
             ganaComputadora();
         }
+        btnDoblar.classList.add("noMostrar");
         btnPedir.classList.add("noMostrar");
         btnDetener.classList.add("noMostrar");
     };
 
     const repartirCartas = () => {
+        apostando = false;
         mensaje.innerText = "Apuestas cerradas";
         btnRepartir.classList.add("noMostrar");
 
@@ -252,6 +255,7 @@
                 turnoComputadora();
             } else {
                 btnPedir.classList.remove("noMostrar");
+                btnDoblar.classList.remove("noMostrar");
                 btnDetener.classList.remove("noMostrar");
                 mensaje.innerText = "Su turno";
             }
@@ -282,6 +286,7 @@
         apuestaJugador.classList.add("noMostrar");
         btnNuevo.classList.add("noMostrar");
         mensaje.innerText = `Hagan sus apuestas`;
+        apostando = true;
     };
 
     const calcularImportes = () => {
@@ -301,6 +306,90 @@
         apuestaJugador.innerText = jugador.apuesta;
     };
 
+    const doblarApuesta = () => {
+        const montoParaDoblar = jugador.apuesta;
+        let apuestaInicial = montoParaDoblar;
+    
+        // Simulación para verificar si es posible apostar antes de realizarla
+        let fichasSimuladas = {
+            500: jugador.fichas500,
+            100: jugador.fichas100,
+            50: jugador.fichas50,
+            10: jugador.fichas10
+        };
+    
+        // Simular uso de fichas de 500
+        while (apuestaInicial >= 500 && fichasSimuladas[500] > 0) {
+            fichasSimuladas[500]--;
+            apuestaInicial -= 500;
+        }
+        // Simular uso de fichas de 100
+        while (apuestaInicial >= 100 && fichasSimuladas[100] > 0) {
+            fichasSimuladas[100]--;
+            apuestaInicial -= 100;
+        }
+        // Simular uso de fichas de 50
+        while (apuestaInicial >= 50 && fichasSimuladas[50] > 0) {
+            fichasSimuladas[50]--;
+            apuestaInicial -= 50;
+        }
+        // Simular uso de fichas de 10
+        while (apuestaInicial >= 10 && fichasSimuladas[10] > 0) {
+            fichasSimuladas[10]--;
+            apuestaInicial -= 10;
+        }
+    
+        // Verificar si la simulación indica que es posible doblar la apuesta
+        if (apuestaInicial > 0) {
+            mensaje.innerText = 'Te he descambiado las fichas para doblar la apuesta';
+
+            if(jugador.fichas500>0){
+                jugador.fichas500--;
+                jugador.fichas100+=5;
+            }
+            if(jugador.fichas100>0){
+                jugador.fichas100--;
+                jugador.fichas50+=2;
+            }
+            if(jugador.fichas50>0){
+                jugador.fichas50--;
+                jugador.fichas10+=5;
+            }
+        }
+    
+        // Realizar la apuesta real después de la verificación
+        apostando = true;
+        mensaje.innerText = 'Doble su apuesta';
+        apuestaInicial = montoParaDoblar;
+    
+        // Apostar fichas de 500
+        while (apuestaInicial >= 500 && jugador.fichas500 > 0) {
+            apostar(500);
+            apuestaInicial -= 500;
+        }
+        // Apostar fichas de 100
+        while (apuestaInicial >= 100 && jugador.fichas100 > 0) {
+            apostar(100);
+            apuestaInicial -= 100;
+        }
+        // Apostar fichas de 50
+        while (apuestaInicial >= 50 && jugador.fichas50 > 0) {
+            apostar(50);
+            apuestaInicial -= 50;
+        }
+        // Apostar fichas de 10
+        while (apuestaInicial >= 10 && jugador.fichas10 > 0) {
+            apostar(10);
+            apuestaInicial -= 10;
+        }
+    
+        // Ocultar el botón de doblar
+        btnDoblar.classList.add('noMostrar');
+    };
+    
+
+
+
     // Eventos
 
     btnPedir.addEventListener("click", () => {
@@ -317,6 +406,9 @@
 
     btnNuevo.addEventListener("click", () => {
         nuevoJuego();
+    });
+    btnDoblar.addEventListener("click", () => {
+        doblarApuesta();
     });
 
     moneda10.addEventListener("click", () => apostar(10));
