@@ -47,6 +47,8 @@ const computadora = {
     contadorCartas: 0,
 };
 
+// Linea de sucesos
+
 const nuevoJuego = () => {
     jugador.fichas10 += jugador.apuestaFichas10;
     jugador.fichas50 += jugador.apuestaFichas50;
@@ -136,7 +138,9 @@ const repartirCartas = () => {
             plantarse();
         } else {
             btnPedir.classList.remove("noMostrar");
-            btnDoblar.classList.remove("noMostrar");
+            if(jugador.saldo >= jugador.apuesta){
+                btnDoblar.classList.remove("noMostrar");
+            }
             btnPlantarse.classList.remove("noMostrar");
             mensaje.innerText = `Va con ${jugador.puntos}. ¿Cómo desea proceder?`;
         }
@@ -179,14 +183,8 @@ const pedirCarta = () => {
 };
 
 const doblarApuesta = () => {
-    if (jugador.apuesta > jugador.saldo) {
-        mensaje.innerText = "No tiene fichas suficientes";
-        return;
-    }
-
     btnPlantarse.classList.add("noMostrar");
     btnPedir.classList.add("noMostrar");
-    // btnRepartir.classList.add('noMostrar');
     btnDoblar.classList.add("noMostrar");
     const montoParaDoblar = jugador.apuesta;
     let apuestaInicial = montoParaDoblar;
@@ -231,6 +229,10 @@ const doblarApuesta = () => {
             jugador.fichas10 += 5;
         }
     }
+
+    // Realizar la apuesta real después de la verificación
+    apostando = true;
+    apuestaInicial = montoParaDoblar;
 
     // Apostar fichas
     while (apuestaInicial >= 500 && jugador.fichas500 > 0) {
@@ -315,6 +317,8 @@ const turnoGanador = () => {
     btnPedir.classList.add("noMostrar");
     btnPlantarse.classList.add("noMostrar");
 };
+
+// Funciones varias
 
 const valorCarta = (carta) => {
     const valor = carta.substring(0, carta.length - 1);
