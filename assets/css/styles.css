@@ -36,9 +36,9 @@ button {
   cursor: pointer;
   display: inline-flex;
   height: 40px;
-  width: 100px;
+  width: 80px;
   justify-content: center;
-  font-size: 12px;
+  font-size: 11px;
   margin: 5px 0;
 }
 
@@ -178,36 +178,6 @@ button {
   filter: drop-shadow(0px 3px 5px #2f2d2d90);
 }
 
-/* .centrarDerecha {
-  right: 20%;
-  transform: translate(50%, -50%);
-}
-
-.centrarIzquierda {
-  left: 20%;
-  transform: translate(-50%, -50%);
-}
-
-.centrarVerticalmente {
-  position: absolute;
-  top: 47%;
-}
-
-.centrarHorizontalmente {
-  position: absolute;
-  left: 50%;
-}
-
-.centrarVerticalmenteComputadora {
-  position: absolute;
-  top: 35% !important;
-}
-
-.centrarVerticalmenteJugador {
-  position: absolute;
-  top: 59.25% !important
-} */
-
 .controles {
   display: flex;
   flex-direction: row;
@@ -226,7 +196,7 @@ button {
 .mensajes {
   font-weight: 100;
   width: 300px;
-  background-color: #184034 !important;
+  background-color: #ffffff10 !important;
   border-radius: 12px;
   box-sizing: border-box;
   color: #fcfcfd;
@@ -234,8 +204,8 @@ button {
   align-items: center;
   height: 35px;
   justify-content: center;
-  font-size: 14px;
-  box-shadow: 0px 0px 12px #ffffff38;
+  font-size: 13px;
+  box-shadow: 0px 0px 3px #00000020;
 }
 
 .noMostrar {
