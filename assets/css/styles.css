@@ -42,7 +42,39 @@ button {
   margin: 5px 0;
 }
 
-#mesa {}
+/* Precarga de imágenes de cartas */
+.preload-images {
+  background-image: url('../cartas/2C.png'), url('../cartas/2D.png'),
+                    url('../cartas/2H.png'), url('../cartas/2S.png'),
+                    url('../cartas/3C.png'), url('../cartas/3D.png'),
+                    url('../cartas/3H.png'), url('../cartas/3S.png'),
+                    url('../cartas/4C.png'), url('../cartas/4D.png'),
+                    url('../cartas/4H.png'), url('../cartas/4S.png'),
+                    url('../cartas/5C.png'), url('../cartas/5D.png'),
+                    url('../cartas/5H.png'), url('../cartas/5S.png'),
+                    url('../cartas/6C.png'), url('../cartas/6D.png'),
+                    url('../cartas/6H.png'), url('../cartas/6S.png'),
+                    url('../cartas/7C.png'), url('../cartas/7D.png'),
+                    url('../cartas/7H.png'), url('../cartas/7S.png'),
+                    url('../cartas/8C.png'), url('../cartas/8D.png'),
+                    url('../cartas/8H.png'), url('../cartas/8S.png'),
+                    url('../cartas/9C.png'), url('../cartas/9D.png'),
+                    url('../cartas/9H.png'), url('../cartas/9S.png'),
+                    url('../cartas/10C.png'), url('../cartas/10D.png'),
+                    url('../cartas/10H.png'), url('../cartas/10S.png'),
+                    url('../cartas/AC.png'), url('../cartas/AD.png'),
+                    url('../cartas/AH.png'), url('../cartas/AS.png'),
+                    url('../cartas/JC.png'), url('../cartas/JD.png'),
+                    url('../cartas/JH.png'), url('../cartas/JS.png'),
+                    url('../cartas/KC.png'), url('../cartas/KD.png'),
+                    url('../cartas/KH.png'), url('../cartas/KS.png'),
+                    url('../cartas/QC.png'), url('../cartas/QD.png'),
+                    url('../cartas/QH.png'), url('../cartas/QS.png'),
+                    url('../cartas/grey_back.png'), url('../cartas/red_back.png'),
+                    url('../fichas/10.png'), url('../fichas/100.png'),
+                    url('../fichas/50.png'), url('../fichas/500.png'),;
+  display: none; /* Oculto para que no interfiera con el diseño */
+}
 
 #apuestaJugador {
   transform: translate(0%, 30px);

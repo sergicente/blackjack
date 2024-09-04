@@ -47,10 +47,6 @@ const computadora = {
     contadorCartas: 0,
 };
 
-
-
-
-
 const nuevoJuego = () => {
     jugador.fichas10 += jugador.apuestaFichas10;
     jugador.fichas50 += jugador.apuestaFichas50;
@@ -148,7 +144,7 @@ const repartirCartas = () => {
 };
 
 const pedirCarta = () => {
-    btnDoblar.classList.add('noMostrar');
+    btnDoblar.classList.add("noMostrar");
     setTimeout(() => {
         mensaje.innerText = `Carta`;
     }, 0);
@@ -159,19 +155,19 @@ const pedirCarta = () => {
     }, 1000);
     setTimeout(() => {
         if (jugador.puntos > 21) {
-            btnPedir.classList.add('noMostrar');
+            btnPedir.classList.add("noMostrar");
             mensaje.innerText = `${jugador.puntos}. Se pasó`;
             setTimeout(() => {
                 turnoGanador();
             }, 1000);
-        } else if(jugador.puntos === 21){
-            btnPedir.classList.add('noMostrar');
+        } else if (jugador.puntos === 21) {
+            btnPedir.classList.add("noMostrar");
             mensaje.innerText = `¡Blackjack!`;
             setTimeout(() => {
                 plantarse();
             }, 1000);
         } else if (jugador.contadorCartas === 5) {
-            btnPedir.classList.add('noMostrar');
+            btnPedir.classList.add("noMostrar");
             mensaje.innerText = `Va con ${jugador.puntos}.`;
             setTimeout(() => {
                 plantarse();
@@ -203,22 +199,18 @@ const doblarApuesta = () => {
         10: jugador.fichas10,
     };
 
-    // Simular uso de fichas de 500
     while (apuestaInicial >= 500 && fichasSimuladas[500] > 0) {
         fichasSimuladas[500]--;
         apuestaInicial -= 500;
     }
-    // Simular uso de fichas de 100
     while (apuestaInicial >= 100 && fichasSimuladas[100] > 0) {
         fichasSimuladas[100]--;
         apuestaInicial -= 100;
     }
-    // Simular uso de fichas de 50
     while (apuestaInicial >= 50 && fichasSimuladas[50] > 0) {
         fichasSimuladas[50]--;
         apuestaInicial -= 50;
     }
-    // Simular uso de fichas de 10
     while (apuestaInicial >= 10 && fichasSimuladas[10] > 0) {
         fichasSimuladas[10]--;
         apuestaInicial -= 10;
@@ -240,27 +232,19 @@ const doblarApuesta = () => {
         }
     }
 
-    // Realizar la apuesta real después de la verificación
-    apostando = true;
-    mensaje.innerText = "Doble su apuesta";
-    apuestaInicial = montoParaDoblar;
-
-    // Apostar fichas de 500
+    // Apostar fichas
     while (apuestaInicial >= 500 && jugador.fichas500 > 0) {
         apostar(500);
         apuestaInicial -= 500;
     }
-    // Apostar fichas de 100
     while (apuestaInicial >= 100 && jugador.fichas100 > 0) {
         apostar(100);
         apuestaInicial -= 100;
     }
-    // Apostar fichas de 50
     while (apuestaInicial >= 50 && jugador.fichas50 > 0) {
         apostar(50);
         apuestaInicial -= 50;
     }
-    // Apostar fichas de 10
     while (apuestaInicial >= 10 && jugador.fichas10 > 0) {
         apostar(10);
         apuestaInicial -= 10;
@@ -271,7 +255,10 @@ const doblarApuesta = () => {
         sumarPuntos(carta, jugador);
         mostrarCarta(divCartasJugador, carta);
         if (jugador.puntos > 21) {
-            turnoGanador();
+            mensaje.innerText = `${jugador.puntos}. Se pasó`;
+            setTimeout(() => {
+                turnoGanador();
+            }, 1000);
         } else {
             plantarse();
         }
@@ -279,11 +266,11 @@ const doblarApuesta = () => {
 };
 
 const plantarse = () => {
-    if(!btnPedir.classList.contains('noMostrar')){
-        btnPedir.classList.add('noMostrar');
+    if (!btnPedir.classList.contains("noMostrar")) {
+        btnPedir.classList.add("noMostrar");
     }
-    btnDoblar.classList.add('noMostrar');
-    btnPlantarse.classList.add('noMostrar');
+    btnDoblar.classList.add("noMostrar");
+    btnPlantarse.classList.add("noMostrar");
     mensaje.innerText = `Va con ${jugador.puntos}.`;
     setTimeout(() => {
         divCartasComputadora.removeChild(divCartasComputadora.children[1]);
@@ -300,7 +287,7 @@ const plantarse = () => {
                 repartirCarta(); // Llama recursivamente si aún se cumplen las condiciones
             }, 1000);
         } else {
-            setTimeout(()=>{
+            setTimeout(() => {
                 mensaje.innerText = `Voy con ${computadora.puntos}.`;
             }, 1000);
             setTimeout(turnoGanador, 2000);
@@ -328,8 +315,6 @@ const turnoGanador = () => {
     btnPedir.classList.add("noMostrar");
     btnPlantarse.classList.add("noMostrar");
 };
-
-
 
 const valorCarta = (carta) => {
     const valor = carta.substring(0, carta.length - 1);
@@ -402,26 +387,26 @@ const sacarCarta = () => {
 };
 
 const ganaJugador = () => {
-        jugador.apuesta *= 2;
-        apuestaJugador.innerText = jugador.apuesta;
-        divFichasApostadas.innerHTML += divFichasApostadas.innerHTML;
-        jugador.apuestaFichas10 *= 2;
-        jugador.apuestaFichas50 *= 2;
-        jugador.apuestaFichas100 *= 2;
-        jugador.apuestaFichas500 *= 2;
-        btnNuevo.classList.remove("noMostrar");
+    jugador.apuesta *= 2;
+    apuestaJugador.innerText = jugador.apuesta;
+    divFichasApostadas.innerHTML += divFichasApostadas.innerHTML;
+    jugador.apuestaFichas10 *= 2;
+    jugador.apuestaFichas50 *= 2;
+    jugador.apuestaFichas100 *= 2;
+    jugador.apuestaFichas500 *= 2;
+    btnNuevo.classList.remove("noMostrar");
 };
 
 const ganaComputadora = () => {
-        jugador.apuestaFichas10 = 0;
-        jugador.apuestaFichas50 = 0;
-        jugador.apuestaFichas100 = 0;
-        jugador.apuestaFichas500 = 0;
-        btnNuevo.classList.remove("noMostrar");
+    jugador.apuestaFichas10 = 0;
+    jugador.apuestaFichas50 = 0;
+    jugador.apuestaFichas100 = 0;
+    jugador.apuestaFichas500 = 0;
+    btnNuevo.classList.remove("noMostrar");
 };
 
 const empate = () => {
-        btnNuevo.classList.remove("noMostrar");
+    btnNuevo.classList.remove("noMostrar");
 };
 
 const calcularImportes = () => {
@@ -440,9 +425,6 @@ const calcularImportes = () => {
     saldoJugador.innerText = jugador.saldo;
     apuestaJugador.innerText = jugador.apuesta;
 };
-
-
-
 
 // Eventos
 

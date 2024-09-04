@@ -4,13 +4,14 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
         <link rel="icon" href="https://sergicente.com/img/favicon.png" type="image/png" />
-        <link rel="stylesheet" href="assets/css/styles.css" />
+        <link rel="preload" href="assets/css/styles.css" as="style" onload="this.rel='stylesheet'">
         <title>Blackjack</title>
     </head>
 
     <body>
+        <div class="preload-images"></div>
         <div id="mesa">
-            <div class="mensajes">has ganado!</div>
+            <div class="mensajes"></div>
             <div id="computadora-cartas"></div>
 
             <div id="centro">
